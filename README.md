@@ -77,7 +77,7 @@ package handler
 import ("entity")
 
 func main() {
-    e := entity.New() // NOOO, linter will indicate error, as Entity has a constructor
+    e := entity.New() // calling constructor of Entity, so passed
 }
 ````
 
