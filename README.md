@@ -1,4 +1,4 @@
-# gondi (Go No Direct Initalize)
+# gondi (Go No Direct Initialize)
 A Go linter to detect direct initialization of structs
 
 ## Terms
