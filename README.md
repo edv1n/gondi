@@ -55,9 +55,9 @@ func (m Member) doSomething() Member { // Not a constructor, not initializing a 
 
 ## Rules
 
-### GONDI001 Do NOT initialize a struct direcrly if there is a Constructor
+### GONDI001 Initialize a struct via the constructor if there is one
 
-Triggering example:
+Failing example:
 
 ```go
 package handler
@@ -65,7 +65,7 @@ package handler
 import ("entity")
 
 func main() {
-    e := Entity{} // NOOO, linter will indicate error
+    e := Entity{} // NOOO, linter will indicate error, as Entity has a constructor
 }
 ````
 
@@ -80,24 +80,3 @@ func main() {
     m := Member{} //pass this rule, as struct `Member` has no constructor
 }
 ````
-    
-
-### GONDI002 If there is a Constructor, it shall be located in the same file
-
-e.g.
-
-```go
-//file entity.go
-package entity
-
-type Entity struct{}
-```
-
-```go
-//file new.go
-package entity
-
-func new() Entity{ // a constructor, but not in the same file as struct Entity (not in entity.go file)
-    e := Entity{}
-}
-```
