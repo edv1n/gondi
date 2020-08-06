@@ -5,7 +5,7 @@ A Go linter to detect direct initialization of structs
 
 ### Constructor
 
-A func that responsible for creating a instance of a struct in the same package.
+A func that responsible for creating a instance of a struct in the same package. The func also needs to be in the same file where the struct defined.
 
 e.g.
 
