@@ -57,7 +57,7 @@ func (m Member) doSomething() Member { // Not a constructor, not initializing a 
 
 ### GONDI001 Initialize a struct via the constructor if there is one
 
-Failing example:
+#### Failing example:
 
 ```go
 package handler
@@ -65,11 +65,23 @@ package handler
 import ("entity")
 
 func main() {
-    e := Entity{} // NOOO, linter will indicate error, as Entity has a constructor
+    e := entity.Entity{} // NOOO, linter will indicate error, as Entity has a constructor
 }
 ````
 
-Passing example:
+to fix it:
+
+```go
+package handler
+
+import ("entity")
+
+func main() {
+    e := entity.New() // NOOO, linter will indicate error, as Entity has a constructor
+}
+````
+
+#### Passing example:
 
 ```go
 package handler
